@@ -1,4 +1,3 @@
-package Apriori;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +27,6 @@ public class AprioriPlus {
 	public static void main(String[] args) throws IOException {
 		long start = System.nanoTime();
 		URL url = new URL("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data");
-		//		URL url = new URL("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.test");
 		Scanner SC = new Scanner(url.openStream());
 		AllPeo = new ArrayList<ArrayList<String>>();
 		AllPeoSet = new ArrayList<HashSet<String>>();

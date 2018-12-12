@@ -1,4 +1,3 @@
-package Apriori;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +20,6 @@ public class Apriori {
 	public static void main(String[] args) throws IOException {
 		long start = System.nanoTime();
 		URL url = new URL("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data");
-		//		URL url = new URL("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.test");
 		Scanner SC = new Scanner(url.openStream());
 		AllPeo = new ArrayList<ArrayList<String>>();
 		AllPeoSet = new ArrayList<HashSet<String>>();
@@ -163,7 +161,7 @@ public class Apriori {
 		System.out.println("\n" + "The running time for preprocessing is " + runtime + "ms");
 		//support: 30162*0.2=6033
 		start = System.nanoTime();
-		sup = 2000;
+		sup = 7000;
 		HashMap<String, Integer> AllPeoAttrk1 = new HashMap<String, Integer>();
 		for (ArrayList<String> AllPeo_ele : AllPeo) {
 			for (String AllPeo_ele_ele : AllPeo_ele) {
@@ -192,6 +190,7 @@ public class Apriori {
 		int Kround = 1;
 		while (!Res.isEmpty()) {
 			Kround++;
+			System.out.println(Kround);
 			FinalResMap.putAll(Res);
 			Res = AprioriCandidGen(Res);
 			Res = CountAndFilter(Res);
